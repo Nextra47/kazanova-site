@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+:root {
+  --navy: #0d1b2a;
+  --navy-light: #111e2e;
+  --navy-dark: #070f18;
+  --gold: #c9a84c;
+  --gold-light: #d4b96a;
+  --cream: #f5f0eb;
+  --cream-muted: #c8c2bb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--navy);
+  color: var(--cream);
+  font-family: var(--font-inter), sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-weight: 300;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--navy-dark); }
+::-webkit-scrollbar-thumb { background: var(--gold); }
+
+/* Animações */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.animate-fade-up { animation: fadeUp 0.7s ease forwards; }
+.animate-fade-in { animation: fadeIn 0.6s ease forwards; }
+
+/* Linha dourada decorativa */
+.gold-line {
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--gold);
+  margin: 16px 0;
+}
+
+/* Tag de seção */
+.section-tag {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* Botões */
+.btn-gold {
+  display: inline-block;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: var(--gold);
+  color: var(--navy);
+  padding: 14px 28px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+.btn-gold:hover { background: var(--gold-light); }
+
+.btn-outline {
+  display: inline-block;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--cream);
+  padding: 13px 27px;
+  border: 1px solid rgba(245,240,235,0.45);
+  transition: border-color 0.2s, color 0.2s;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+/* Image overlay padrão */
+.img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(13,27,42,0.92) 0%, rgba(13,27,42,0.1) 60%);
+}
