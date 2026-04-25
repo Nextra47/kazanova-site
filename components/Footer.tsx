@@ -16,7 +16,7 @@ const services = ["Cozinhas", "Closets", "Salas", "Dormitórios", "Reformas", "P
 export default function Footer() {
   return (
     <footer style={{ background: "var(--navy-dark)", borderTop: "1px solid rgba(201,168,76,0.1)" }}>
-      <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "64px 40px 32px", display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1.2fr", gap: "48px" }}>
+      <div className="footer-grid" style={{ maxWidth: "1200px", margin: "0 auto", padding: "64px 40px 32px" }}>
         {/* Brand */}
         <div>
           <div style={{ fontFamily: "var(--font-cormorant)", fontSize: "18px", letterSpacing: "5px", textTransform: "uppercase", color: "var(--cream)", marginBottom: "16px" }}>
@@ -79,7 +79,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "20px 40px", borderTop: "1px solid rgba(255,255,255,0.05)", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+      <div className="footer-bottom" style={{ maxWidth: "1200px", margin: "0 auto", padding: "20px 40px", borderTop: "1px solid rgba(255,255,255,0.05)" }}>
         <p style={{ fontFamily: "var(--font-inter)", fontSize: "10px", color: "#333", letterSpacing: "1px" }}>
           © {new Date().getFullYear()} KAZANOVA Móveis Sob Medida. Todos os direitos reservados.
         </p>
