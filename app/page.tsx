@@ -163,12 +163,13 @@ export default function Home() {
           </div>
         </motion.div>
 
-        {/* Stats flutuantes */}
+        {/* Stats flutuantes - hidden on mobile via .hero-stats-float */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 0.8 }}
-          style={{ position: "absolute", bottom: "40px", right: "40px", display: "flex", gap: "36px" }}
+          className="hero-stats-float"
+          style={{ position: "absolute", bottom: "40px", right: "40px" }}
         >
           {stats.slice(0, 3).map((s) => (
             <div key={s.label} style={{ textAlign: "center" }}>
@@ -196,7 +197,7 @@ export default function Home() {
       </section>
 
       {/* STATS BAR */}
-      <section style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", borderBottom: "1px solid rgba(201,168,76,0.15)" }}>
+      <section className="stats-grid">
         {stats.map((s, i) => (
           <AnimateIn key={s.label} delay={i * 0.1} direction="up">
             <div style={{ padding: "28px 20px", textAlign: "center", borderRight: i < 3 ? "1px solid rgba(201,168,76,0.1)" : "none" }}>
@@ -210,10 +211,10 @@ export default function Home() {
       </section>
 
       {/* SERVIÇOS */}
-      <section style={{ padding: "80px 40px" }}>
+      <section className="section-padded">
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           <AnimateIn>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "48px" }}>
+            <div className="section-header">
               <div>
                 <p className="section-tag">O que fazemos</p>
                 <span className="gold-line" />
@@ -227,17 +228,17 @@ export default function Home() {
             </div>
           </AnimateIn>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "3px" }}>
+          <div className="services-grid">
             {services.map((s, i) => <ServiceCard key={s.name} s={s} i={i} />)}
           </div>
         </div>
       </section>
 
       {/* PORTFÓLIO */}
-      <section style={{ padding: "0 40px 80px" }}>
+      <section className="section-padded-b">
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           <AnimateIn>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "48px" }}>
+            <div className="section-header">
               <div>
                 <p className="section-tag">Nosso trabalho</p>
                 <span className="gold-line" />
@@ -251,7 +252,7 @@ export default function Home() {
             </div>
           </AnimateIn>
 
-          <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gridTemplateRows: "300px 300px", gap: "3px" }}>
+          <div className="portfolio-mosaic">
             {portfolio.map((p, i) => (
               <div key={p.name} style={{ gridRow: p.big ? "span 2" : undefined, height: "100%" }}>
                 <PortfolioCard p={p} i={i} />
@@ -262,8 +263,8 @@ export default function Home() {
       </section>
 
       {/* SOBRE SNIPPET */}
-      <section style={{ display: "grid", gridTemplateColumns: "1fr 1fr", minHeight: "480px" }}>
-        <AnimateIn direction="left" style={{ position: "relative", overflow: "hidden" }}>
+      <section className="about-grid">
+        <AnimateIn direction="left" className="about-img" style={{ position: "relative", overflow: "hidden" }}>
           <motion.div
             whileHover={{ scale: 1.04 }}
             transition={{ duration: 0.6 }}
@@ -272,7 +273,7 @@ export default function Home() {
             <Image src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=900&q=80" alt="Marcenaria KAZANOVA" fill style={{ objectFit: "cover" }} />
           </motion.div>
         </AnimateIn>
-        <AnimateIn direction="right" style={{ background: "var(--navy-light)", padding: "80px 60px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+        <AnimateIn direction="right" className="about-text-pad" style={{ background: "var(--navy-light)", padding: "80px 60px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
           <p className="section-tag">Nossa história</p>
           <span className="gold-line" />
           <h2 style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(28px,3vw,42px)", fontWeight: 300, lineHeight: 1.3, marginBottom: "24px" }}>
@@ -286,7 +287,7 @@ export default function Home() {
       </section>
 
       {/* DEPOIMENTOS */}
-      <section style={{ background: "var(--navy-light)", padding: "80px 40px" }}>
+      <section className="section-padded" style={{ background: "var(--navy-light)" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           <AnimateIn>
             <p className="section-tag">O que dizem nossos clientes</p>
@@ -295,7 +296,7 @@ export default function Home() {
               Histórias de <span style={{ color: "var(--gold)" }}>transformação</span>
             </h2>
           </AnimateIn>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "40px" }}>
+          <div className="testimonials-grid">
             {testimonials.map((t, i) => (
               <AnimateIn key={t.author} delay={i * 0.15}>
                 <motion.div
