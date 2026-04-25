@@ -43,9 +43,9 @@ export default function Contato() {
       </section>
 
       {/* FORMULÁRIO + INFO */}
-      <section style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", minHeight: "600px" }}>
+      <section className="contact-grid">
         {/* Formulário */}
-        <div style={{ padding: "80px 60px" }}>
+        <div className="contact-form-col" style={{ padding: "80px 60px" }}>
           <p className="section-tag" style={{ marginBottom: "8px" }}>Orçamento gratuito</p>
           <span className="gold-line" />
           <h2 style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(28px,3vw,40px)", fontWeight: 300, marginBottom: "40px" }}>
@@ -97,7 +97,7 @@ export default function Contato() {
         </div>
 
         {/* Info */}
-        <div style={{ background: "var(--navy-light)", padding: "80px 52px", display: "flex", flexDirection: "column", justifyContent: "center", gap: "40px" }}>
+        <div className="contact-info-col" style={{ background: "var(--navy-light)", padding: "80px 52px", display: "flex", flexDirection: "column", justifyContent: "center", gap: "40px" }}>
           {[
             {
               title: "WhatsApp",

@@ -66,11 +66,11 @@ export default function Blog() {
       </section>
 
       {/* POST DESTAQUE */}
-      <section style={{ padding: "80px 40px" }}>
+      <section className="section-padded">
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           <p className="section-tag" style={{ marginBottom: "8px" }}>Artigo em destaque</p>
           <span className="gold-line" />
-          <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: "3px", marginTop: "32px" }}>
+          <div className="grid-featured" style={{ marginTop: "32px" }}>
             <div style={{ position: "relative", minHeight: "440px", overflow: "hidden" }}>
               <Image src={featured.img} alt={featured.title} fill style={{ objectFit: "cover" }} />
             </div>
@@ -89,11 +89,11 @@ export default function Blog() {
       </section>
 
       {/* GRID DE POSTS */}
-      <section style={{ padding: "0 40px 80px" }}>
+      <section className="section-padded-b">
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           <p className="section-tag" style={{ marginBottom: "8px" }}>Últimos artigos</p>
           <span className="gold-line" style={{ marginBottom: "40px" }} />
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "3px" }}>
+          <div className="grid-3col">
             {rest.map((p) => (
               <div key={p.title} style={{ background: "var(--navy-light)", cursor: "pointer", overflow: "hidden" }}>
                 <div style={{ position: "relative", height: "220px", overflow: "hidden" }}>

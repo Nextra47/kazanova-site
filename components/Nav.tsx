@@ -47,7 +47,7 @@ export default function Nav() {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          padding: "0 40px",
+          padding: "0 clamp(16px, 4vw, 40px)",
           height: "72px",
           transition: "background 0.3s, border-color 0.3s",
           background: scrolled ? "rgba(7,15,24,0.97)" : "transparent",

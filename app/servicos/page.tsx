@@ -60,14 +60,14 @@ export default function Servicos() {
       </section>
 
       {/* SERVIÇOS */}
-      <section style={{ padding: "80px 40px" }}>
+      <section className="section-padded">
         <div style={{ maxWidth: "1200px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "80px" }}>
           {services.map((s, i) => (
-            <div key={s.name} style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3px", direction: i % 2 !== 0 ? "rtl" : "ltr" }}>
-              <div style={{ position: "relative", minHeight: "400px", overflow: "hidden", direction: "ltr" }}>
+            <div key={s.name} className="service-split" style={{ direction: i % 2 !== 0 ? "rtl" : "ltr" }}>
+              <div className="service-img" style={{ position: "relative", minHeight: "400px", overflow: "hidden", direction: "ltr" }}>
                 <Image src={s.img} alt={s.name} fill style={{ objectFit: "cover" }} />
               </div>
-              <div style={{ background: "var(--navy-light)", padding: "60px 52px", display: "flex", flexDirection: "column", justifyContent: "center", direction: "ltr" }}>
+              <div className="service-text" style={{ background: "var(--navy-light)", padding: "60px 52px", display: "flex", flexDirection: "column", justifyContent: "center", direction: "ltr" }}>
                 <p className="section-tag" style={{ marginBottom: "8px" }}>0{i + 1}</p>
                 <span className="gold-line" />
                 <h2 style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(24px,2.5vw,36px)", fontWeight: 300, marginBottom: "20px" }}>{s.name}</h2>

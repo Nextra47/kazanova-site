@@ -35,8 +35,8 @@ export default function Sobre() {
       </section>
 
       {/* HISTÓRIA */}
-      <section style={{ display: "grid", gridTemplateColumns: "1fr 1fr", minHeight: "500px" }}>
-        <div style={{ background: "var(--navy-light)", padding: "80px 60px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+      <section className="grid-2col" style={{ minHeight: "500px" }}>
+        <div className="about-text-pad" style={{ background: "var(--navy-light)", padding: "80px 60px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
           <p className="section-tag">Desde 2009</p>
           <span className="gold-line" />
           <h2 style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(28px,3vw,42px)", fontWeight: 300, lineHeight: 1.3, marginBottom: "28px" }}>
@@ -55,14 +55,14 @@ export default function Sobre() {
       </section>
 
       {/* VALORES */}
-      <section style={{ padding: "80px 40px" }}>
+      <section className="section-padded">
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           <p className="section-tag">Nossos pilares</p>
           <span className="gold-line" />
           <h2 style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(28px,3vw,42px)", fontWeight: 300, marginBottom: "56px" }}>
             O que nos <span style={{ color: "var(--gold)" }}>diferencia</span>
           </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: "3px" }}>
+          <div className="grid-4col">
             {values.map((v, i) => (
               <AnimateIn key={v.title} delay={i * 0.1}>
               <motion.div whileHover={{ y: -6 }} transition={{ duration: 0.3 }} style={{ background: "var(--navy-light)", padding: "40px 32px", borderTop: "2px solid var(--gold)", height: "100%" }}>
@@ -77,14 +77,14 @@ export default function Sobre() {
       </section>
 
       {/* PROCESSO */}
-      <section style={{ background: "var(--navy-light)", padding: "80px 40px" }}>
+      <section className="section-padded" style={{ background: "var(--navy-light)" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           <p className="section-tag">Como trabalhamos</p>
           <span className="gold-line" />
           <h2 style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(28px,3vw,42px)", fontWeight: 300, marginBottom: "56px" }}>
             Do projeto à <span style={{ color: "var(--gold)" }}>entrega</span>
           </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: "40px" }}>
+          <div className="grid-4col" style={{ gap: "40px" }}>
             {process.map((p) => (
               <div key={p.num}>
                 <div style={{ fontFamily: "var(--font-cormorant)", fontSize: "56px", fontWeight: 300, color: "rgba(201,168,76,0.2)", lineHeight: 1, marginBottom: "16px" }}>{p.num}</div>
